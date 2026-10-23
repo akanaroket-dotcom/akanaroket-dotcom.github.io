@@ -118,6 +118,7 @@
                 <li><a class="nav-link" href="#departmanlar"><span class="tr-content">Departmanlarımız</span><span class="en-content">Departments</span></a></li>
                 <li><a class="nav-link" href="#basarilar"><span class="tr-content">Başarılarımız</span><span class="en-content">Achievements</span></a></li>
                 <li><a class="nav-link" href="#medya"><span class="tr-content">Galeri</span><span class="en-content">Gallery</span></a></li>
+                <li><a class="nav-link" href="#oyun"><span class="tr-content">Oyun</span><span class="en-content">Game</span></a></li>
                 <li><a class="nav-link" href="#ekibe-alim"><span class="tr-content">Ekibe Katıl</span><span class="en-content">Join the Team</span></a></li>
                 <li><a class="nav-link" href="#iletisim"><span class="tr-content">İletişim</span><span class="en-content">Contact</span></a></li>
                 <li><button class="lang-btn" type="button" onclick="toggleLanguage()" aria-label="Dili değiştir / Switch language"><span class="l-tr">TR</span> | <span class="l-en">EN</span></button></li>
@@ -407,6 +408,66 @@
       </div>
     </section>
 
+    <!-- OYUN + SKOR TABLOSU -->
+    <section id="oyun" class="sect" aria-labelledby="oyun-title">
+      <div class="board">
+        <div class="t head" style="--c:12;--r:1;--ct:6"><h2 class="h-title" id="oyun-title"><span class="tr-content">Oyunu Oyna, Rekoru Kır</span><span class="en-content">Play the Game, Set the Record</span></h2></div>
+        <div class="t og-main alt" style="--c:8;--r:9;--ct:6">
+          <div class="og-tabs" role="tablist" aria-label="Oyun ve skor tablosu / Game and leaderboard">
+            <button class="og-tab" type="button" role="tab" id="og-tab-oyun" data-tab="oyun" aria-controls="og-p-oyun" aria-selected="true"><span class="tr-content">Oyun</span><span class="en-content">Game</span></button>
+            <button class="og-tab" type="button" role="tab" id="og-tab-skor" data-tab="skor" aria-controls="og-p-skor" aria-selected="false" tabindex="-1"><span class="tr-content">Skor Tablosu</span><span class="en-content">Leaderboard</span></button>
+          </div>
+          <div class="og-panel" id="og-p-oyun" role="tabpanel" aria-labelledby="og-tab-oyun">
+            <div class="og-stage">
+              <div class="og-frame" id="og-frame">
+                <button class="og-start" id="og-start" type="button">
+                  <img src="assets/img/akana-logo-180.png" alt="" width="76" height="76">
+                  <span class="og-name">Asteroid Frontier</span>
+                  <span class="og-sub">AKANA Roket Takımı</span>
+                  <span class="og-play"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg><span class="tr-content">Oyunu Başlat</span><span class="en-content">Start the Game</span></span>
+                </button>
+              </div>
+              <div class="og-tools">
+                <button class="act ghost" id="og-fs" type="button" disabled><span class="tr-content">Tam Ekran</span><span class="en-content">Fullscreen</span></button>
+                <a class="act ghost" href="oyun/" target="_blank" rel="noopener"><span class="tr-content">Yeni Sekmede Aç</span><span class="en-content">Open in New Tab</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="og-panel" id="og-p-skor" role="tabpanel" aria-labelledby="og-tab-skor" hidden>
+            <div class="og-modes chips" role="group" aria-label="Mod / Mode">
+              <button class="chip" type="button" data-mod="klasik" aria-pressed="true"><span class="tr-content">Klasik</span><span class="en-content">Classic</span></button>
+              <button class="chip" type="button" data-mod="firtina" aria-pressed="false"><span class="tr-content">Fırtına</span><span class="en-content">Storm</span></button>
+              <button class="chip" type="button" data-mod="bossAvi" aria-pressed="false"><span class="tr-content">Boss Avı</span><span class="en-content">Boss Hunt</span></button>
+            </div>
+            <ol class="og-list" id="og-list" aria-live="polite" aria-busy="false"></ol>
+            <p class="og-status" id="og-status" role="status"></p>
+            <div class="og-foot">
+              <button class="act ghost" id="og-refresh" type="button"><span class="tr-content">Yenile</span><span class="en-content">Refresh</span></button>
+              <span class="og-time" id="og-time"></span>
+            </div>
+          </div>
+        </div>
+        <div class="t purple og-side" style="--c:4;--r:5;--ct:6">
+          <h3 class="t-h"><span class="tr-content">AKANA: Asteroid Frontier</span><span class="en-content">AKANA: Asteroid Frontier</span></h3>
+          <ul>
+            <li class="tr-content">Asteroit kuşağında hayatta kal, kristal topla, pilotunu seç ve mağazadan roketini geliştir.</li>
+            <li class="en-content">Survive the asteroid belt, collect crystals, pick your pilot and upgrade your rocket in the shop.</li>
+            <li class="tr-content">Üç modun her birinde en iyi skorun tabloya yazılır.</li>
+            <li class="en-content">Your best score in each of the three modes goes on the board.</li>
+          </ul>
+          <button class="act paper" type="button" data-goto="skor"><span><span class="tr-content">Skor Tablosunu Aç</span><span class="en-content">Open the Leaderboard</span></span><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square"/></svg></button>
+        </div>
+        <div class="t txt og-side" style="--c:4;--r:4;--ct:6">
+          <h3 class="t-h"><span class="tr-content">Takma Ad ve Gizlilik</span><span class="en-content">Nickname &amp; Privacy</span></h3>
+          <ul>
+            <li class="tr-content">İlk skorunda bir takma ad seçersin. Gerçek adını yazmak zorunda değilsin; yalnızca takma ad ve skor saklanır.</li>
+            <li class="en-content">You pick a nickname with your first score. You don't need to use your real name; only the nickname and score are stored.</li>
+            <li class="tr-content">Skorlar oyuncunun cihazından gönderilir; tablo resmi bir yarışma sonucu değildir.</li>
+            <li class="en-content">Scores are submitted from the player's device; the board is not an official competition result.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <!-- SPONSORLAR -->
     <section id="sponsorlar" class="sect" aria-labelledby="sponsor-title">
       <div class="board">
@@ -441,7 +502,7 @@
         <div class="t txt alt f-state" style="--c:4;--r:3;--ct:6"><p class="f-slogan"><span class="tr-content">Hayalleri olan bir avuç genç, dünyayı değiştirebilir.</span><span class="en-content">A handful of young people with dreams can change the world.</span></p>
           <div class="social-links"><a aria-label="LinkedIn" href="https://www.linkedin.com/in/akana-rocket-team-a53b84378" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="20" viewBox="0 0 24 24" width="20"><circle cx="5" cy="5" r="2.2"></circle><rect height="12" width="4.4" x="2.8" y="9"></rect><path d="M10 9h4.2v1.8c.7-1.2 2.1-2 3.9-2 3.2 0 3.9 2.1 3.9 4.9V21h-4.4v-6.4c0-1.5-.3-2.5-1.8-2.5s-1.9 1.1-1.9 2.5V21H10z"></path></svg></a><a aria-label="Instagram" href="https://www.instagram.com/akana_roket" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><rect height="18" rx="5" width="18" x="3" y="3"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.3" cy="6.7" fill="currentColor" r="1" stroke="none"></circle></svg></a><a aria-label="YouTube" href="https://youtube.com/@cgmakana" rel="noopener noreferrer" target="_blank"><svg aria-hidden="true" fill="currentColor" height="20" viewBox="0 0 24 24" width="20"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"></path></svg></a></div>
           <p class="legal">&copy; 2026 AKANA Roket Takımı. <span class="tr-content">Tüm hakları saklıdır.</span><span class="en-content">All rights reserved.</span></p></div>
-        <div class="t txt f-nav" style="--c:3;--r:3;--ct:3"><h4><span class="tr-content">Site</span><span class="en-content">Site</span></h4><nav aria-label="Alt menü / Footer menu"><ul class="f-links"><li><a href="#hakkimizda"><span class="tr-content">Hakkımızda</span><span class="en-content">About Us</span></a></li><li><a href="#projeler"><span class="tr-content">Projelerimiz</span><span class="en-content">Projects</span></a></li><li><a href="#departmanlar"><span class="tr-content">Departmanlarımız</span><span class="en-content">Departments</span></a></li><li><a href="#basarilar"><span class="tr-content">Başarılarımız</span><span class="en-content">Achievements</span></a></li><li><a href="#medya"><span class="tr-content">Galeri</span><span class="en-content">Gallery</span></a></li><li><a href="#ekibe-alim"><span class="tr-content">Ekibe Katıl</span><span class="en-content">Join the Team</span></a></li></ul></nav></div>
+        <div class="t txt f-nav" style="--c:3;--r:3;--ct:3"><h4><span class="tr-content">Site</span><span class="en-content">Site</span></h4><nav aria-label="Alt menü / Footer menu"><ul class="f-links"><li><a href="#hakkimizda"><span class="tr-content">Hakkımızda</span><span class="en-content">About Us</span></a></li><li><a href="#projeler"><span class="tr-content">Projelerimiz</span><span class="en-content">Projects</span></a></li><li><a href="#departmanlar"><span class="tr-content">Departmanlarımız</span><span class="en-content">Departments</span></a></li><li><a href="#basarilar"><span class="tr-content">Başarılarımız</span><span class="en-content">Achievements</span></a></li><li><a href="#medya"><span class="tr-content">Galeri</span><span class="en-content">Gallery</span></a></li><li><a href="#oyun"><span class="tr-content">Oyun</span><span class="en-content">Game</span></a></li><li><a href="#ekibe-alim"><span class="tr-content">Ekibe Katıl</span><span class="en-content">Join the Team</span></a></li></ul></nav></div>
         <div class="t txt alt f-loc" style="--c:2;--r:3;--ct:3"><h4><span class="tr-content">Konum</span><span class="en-content">Location</span></h4><p>Çemberlitaş Gençlik Merkezi, Fatih / İstanbul</p><p class="clock" id="clock" aria-label="İstanbul yerel saati / Istanbul local time"></p></div>
         <div class="t txt f-mail" style="--c:3;--r:3;--ct:3"><h4><span class="tr-content">İletişim</span><span class="en-content">Contact</span></h4><a class="mail" href="mailto:akanaprojectteam@gmail.com">akanaprojectteam@gmail.com</a></div>
         <div class="t f-word" style="--c:8;--r:4;--ct:6"><span class="f-logo"><img src="assets/img/akana-logo-180.png" alt="" width="90" height="90"></span><span class="f-wm" aria-hidden="true">AKANA ROKET</span></div>
@@ -521,5 +582,6 @@
     </div>
 
     <script src="assets/js/akana.js" defer></script>
+    <script src="assets/js/oyun.js" defer></script>
 </body>
 </html>
